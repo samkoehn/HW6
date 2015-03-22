@@ -10,12 +10,42 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:SqlDataSource ID="sql_recipe" runat="server" ConnectionString="<%$ ConnectionStrings:db_recipe %>" SelectCommand="SELECT [rpID], [recipe_name], [recipe_submitter] FROM [samkoehn_hw6_recipes]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sql_recipe" runat="server" ConnectionString="<%$ ConnectionStrings:db_recipe %>" DeleteCommand="DELETE FROM [samkoehn_hw6_recipes] WHERE [rpID] = @rpID" InsertCommand="INSERT INTO [samkoehn_hw6_recipes] ([recipe_name], [recipe_submitter], [ingredient_1], [ingredient_2], [ingredient_3], [ingredient_4], [ingredient_5], [preparation], [notes]) VALUES (@recipe_name, @recipe_submitter, @ingredient_1, @ingredient_2, @ingredient_3, @ingredient_4, @ingredient_5, @preparation, @notes)" SelectCommand="SELECT * FROM [samkoehn_hw6_recipes]" UpdateCommand="UPDATE [samkoehn_hw6_recipes] SET [recipe_name] = @recipe_name, [recipe_submitter] = @recipe_submitter, [ingredient_1] = @ingredient_1, [ingredient_2] = @ingredient_2, [ingredient_3] = @ingredient_3, [ingredient_4] = @ingredient_4, [ingredient_5] = @ingredient_5, [preparation] = @preparation, [notes] = @notes WHERE [rpID] = @rpID">
+            <DeleteParameters>
+                <asp:Parameter Name="rpID" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="recipe_name" Type="String" />
+                <asp:Parameter Name="recipe_submitter" Type="String" />
+                <asp:Parameter Name="ingredient_1" Type="String" />
+                <asp:Parameter Name="ingredient_2" Type="String" />
+                <asp:Parameter Name="ingredient_3" Type="String" />
+                <asp:Parameter Name="ingredient_4" Type="String" />
+                <asp:Parameter Name="ingredient_5" Type="String" />
+                <asp:Parameter Name="preparation" Type="String" />
+                <asp:Parameter Name="notes" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="recipe_name" Type="String" />
+                <asp:Parameter Name="recipe_submitter" Type="String" />
+                <asp:Parameter Name="ingredient_1" Type="String" />
+                <asp:Parameter Name="ingredient_2" Type="String" />
+                <asp:Parameter Name="ingredient_3" Type="String" />
+                <asp:Parameter Name="ingredient_4" Type="String" />
+                <asp:Parameter Name="ingredient_5" Type="String" />
+                <asp:Parameter Name="preparation" Type="String" />
+                <asp:Parameter Name="notes" Type="String" />
+                <asp:Parameter Name="rpID" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <asp:HyperLink ID="hyp_addNew" runat="server" NavigateUrl="~/NewRecipe.aspx">Add New</asp:HyperLink>
         <br />
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="rpID" DataSourceID="sql_recipe">
             <Columns>
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
                 <asp:BoundField DataField="recipe_submitter" HeaderText="Submitted By" SortExpression="recipe_submitter" />
+                <asp:HyperLinkField DataNavigateUrlFields="rpID" DataNavigateUrlFormatString="detailsview.aspx?rpID={0}" Text="View" />
             </Columns>
         </asp:GridView>
     
