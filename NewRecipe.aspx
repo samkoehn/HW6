@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="~/css/stylesheet.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -48,17 +49,20 @@
             <InsertItemTemplate>
                 <table>
                     <tr>
-                        <td style="text-align:right;">
+                        <td>
                             Recipe Name:
 
-                        </td>
+                        </td> 
+                        <td>
                             
-                        <td style="text-align:left;">
-                            
-                            <asp:TextBox ID="recipe_nameTextBox" runat="server" Text='<%# Bind("recipe_name") %>' />
+                            <asp:TextBox ID="tb_recipeName" runat="server" Text='<%# Bind("recipe_name") %>' />
 
                         </td>
+                        <td>
+                            
+                            <asp:RequiredFieldValidator ID="rfv_recipeName" runat="server" ErrorMessage="Please enter the name of the new recipe!" CssClass="validationError" ControlToValidate="tb_recipeName"></asp:RequiredFieldValidator>
 
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -67,10 +71,14 @@
                         </td>
 
                         <td>
-                              <asp:TextBox ID="recipe_submitterTextBox" runat="server" Text='<%# Bind("recipe_submitter") %>' />
+                              <asp:TextBox ID="tb_recipeSubmitter" runat="server" Text='<%# Bind("recipe_submitter") %>' />
 
                         </td>
+                        <td>
+                            
+                            <asp:RequiredFieldValidator ID="rfv_recipeSubmitter" runat="server" ErrorMessage="Please enter the author of the new recipe!" CssClass="validationError" ControlToValidate="tb_recipeSubmitter"></asp:RequiredFieldValidator>
 
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -80,10 +88,14 @@
 
                         <td>
 
-                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("ingredient_1") %>' />
+                        <asp:TextBox ID="tb_ingredient1" runat="server" Text='<%# Bind("ingredient_1") %>' />
 
                         </td>
+                           <td>
+                            
+                            <asp:RequiredFieldValidator ID="rfv_ingredient1" runat="server" ErrorMessage="Please enter the first ingredient of the new recipe!" CssClass="validationError" ControlToValidate="tb_ingredient1"></asp:RequiredFieldValidator>
 
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -93,7 +105,7 @@
 
                         <td>
                             
-                             <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("ingredient_2") %>' />
+                             <asp:TextBox ID="tb_ingredient2" runat="server" Text='<%# Bind("ingredient_2") %>' />
                         </td>
 
                     </tr>
@@ -104,7 +116,7 @@
                         </td>
 
                         <td>
-                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("ingredient_3") %>' />
+                            <asp:TextBox ID="tb_ingredient3" runat="server" Text='<%# Bind("ingredient_3") %>' />
 
                         </td>
 
@@ -116,7 +128,7 @@
                         </td>
 
                         <td>
-                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("ingredient_4") %>' />
+                            <asp:TextBox ID="tb_ingredient4" runat="server" Text='<%# Bind("ingredient_4") %>' />
 
                         </td>
 
@@ -128,32 +140,38 @@
                         </td>
 
                         <td>
-                            <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("ingredient_5") %>' />
+                            <asp:TextBox ID="tb_ingredient5" runat="server" Text='<%# Bind("ingredient_5") %>' />
 
                         </td>
 
                     </tr>
                     <tr>
                         <td>
-                            Preparation
+                            Preparation:
 
                         </td>
 
                         <td>
 
-                            <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("preparation") %>' />
+                            <asp:TextBox ID="tb_preparation" runat="server" Text='<%# Bind("preparation") %>' />
                         </td>
+                        <td>
+                            
+                            <asp:RequiredFieldValidator ID="rfv_preparation" runat="server" ErrorMessage="Please enter the preparation of the new recipe!" CssClass="validationError" ControlToValidate="tb_preparation">
 
+                            </asp:RequiredFieldValidator>
+
+                        </td>
                     </tr>
                     <tr>
                         <td>
-                            Notes
+                            Notes:
 
                         </td>
 
                         <td>
 
-                            <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("notes") %>' />
+                            <asp:TextBox ID="tb_notes" runat="server" Text='<%# Bind("notes") %>' />
                         </td>
 
                     </tr>
