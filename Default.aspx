@@ -42,7 +42,6 @@
         <br />
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="rpID" DataSourceID="sql_recipe">
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
                 <asp:BoundField DataField="recipe_submitter" HeaderText="Submitted By" SortExpression="recipe_submitter" />
                 <asp:HyperLinkField DataNavigateUrlFields="rpID" DataNavigateUrlFormatString="detailsview.aspx?rpID={0}" Text="View" />

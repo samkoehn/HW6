@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="~/css/stylesheet.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -42,6 +43,8 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
+        <span class="deletedrecipe"><asp:Label ID="lbl_deletedrecipe" runat="server"></asp:Label></span>
+        <br />
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="rpID" DataSourceID="sql_recipe" Height="50px" Width="245px">
             <Fields>
                 <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
@@ -53,7 +56,7 @@
                 <asp:BoundField DataField="ingredient_5" HeaderText="Ingredient 5" SortExpression="ingredient_5" />
                 <asp:BoundField DataField="preparation" HeaderText="Preparation" SortExpression="preparation" />
                 <asp:BoundField DataField="notes" HeaderText="Notes" SortExpression="notes" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             </Fields>
         </asp:DetailsView>
         <br />
