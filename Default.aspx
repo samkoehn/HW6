@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Wicked Easy Recipes</title>
+    <link rel="stylesheet" type="text/css" href="~/css/stylesheet.css" />
 </head>
 <body>
     <h1>
@@ -24,7 +25,7 @@
     </nav>
     <form id="form1" runat="server">
     <div>
-    
+        
         <asp:SqlDataSource ID="sql_recipe" runat="server" ConnectionString="<%$ ConnectionStrings:db_recipe %>" DeleteCommand="DELETE FROM [samkoehn_hw6_recipes] WHERE [rpID] = @rpID" InsertCommand="INSERT INTO [samkoehn_hw6_recipes] ([recipe_name], [recipe_submitter], [ingredient_1], [ingredient_2], [ingredient_3], [ingredient_4], [ingredient_5], [preparation], [notes]) VALUES (@recipe_name, @recipe_submitter, @ingredient_1, @ingredient_2, @ingredient_3, @ingredient_4, @ingredient_5, @preparation, @notes)" SelectCommand="SELECT * FROM [samkoehn_hw6_recipes]" UpdateCommand="UPDATE [samkoehn_hw6_recipes] SET [recipe_name] = @recipe_name, [recipe_submitter] = @recipe_submitter, [ingredient_1] = @ingredient_1, [ingredient_2] = @ingredient_2, [ingredient_3] = @ingredient_3, [ingredient_4] = @ingredient_4, [ingredient_5] = @ingredient_5, [preparation] = @preparation, [notes] = @notes WHERE [rpID] = @rpID">
             <DeleteParameters>
                 <asp:Parameter Name="rpID" Type="Int32" />
@@ -53,12 +54,12 @@
                 <asp:Parameter Name="rpID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:HyperLink ID="hyp_addNew" runat="server" NavigateUrl="~/NewRecipe.aspx">Add New</asp:HyperLink>
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="rpID" DataSourceID="sql_recipe" Width="394px">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="rpID" DataSourceID="sql_recipe" Width="619px" CssClass="table table-bordered, table-striped">
+       
             <Columns>
-                <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
                 <asp:BoundField DataField="recipe_submitter" HeaderText="Submitted By" SortExpression="recipe_submitter" />
+                <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
                 <asp:HyperLinkField DataNavigateUrlFields="rpID" DataNavigateUrlFormatString="detailsview.aspx?rpID={0}" Text="View" />
             </Columns>
         </asp:GridView>

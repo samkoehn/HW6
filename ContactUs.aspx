@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Wicked Easy Recipes</title>
+    <link rel="stylesheet" type="text/css" href="~/css/stylesheet.css" />
 </head>
 <body>
     <h1>
