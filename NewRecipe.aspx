@@ -42,7 +42,7 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
-        <asp:FormView ID="FormView1" runat="server" DataKeyNames="rpID" DataSourceID="sql_recipe" DefaultMode="Insert" Width="348px">
+        <asp:FormView ID="FormView1" runat="server" DataKeyNames="rpID" DataSourceID="sql_recipe" DefaultMode="Insert" Width="615px">
             <EditItemTemplate>
       
             </EditItemTemplate>

@@ -40,7 +40,7 @@
         </asp:SqlDataSource>
         <asp:HyperLink ID="hyp_addNew" runat="server" NavigateUrl="~/NewRecipe.aspx">Add New</asp:HyperLink>
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="rpID" DataSourceID="sql_recipe">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="rpID" DataSourceID="sql_recipe" Width="394px">
             <Columns>
                 <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
                 <asp:BoundField DataField="recipe_submitter" HeaderText="Submitted By" SortExpression="recipe_submitter" />
