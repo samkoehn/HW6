@@ -1,4 +1,10 @@
-﻿h1{
+﻿footer {
+    color:#696969;
+    text-align:center;
+    
+}
+
+h1{
     color:#696969;
     font-weight: bold;
     text-align: center;
@@ -9,16 +15,24 @@ h2{
 
 }
 body {
-    color: black;
-
+    color: white;
 
 }
 
-nav{
+.nav{
     color:#696969;
     text-align:center;
+    justify-content:center;
+    text-decoration-line:underline;
+    width:60px;
 }
 
+a{
+    color:#FFFF99;
+    text-align:center;
+    width: 60px;
+
+}
 table
 {
     max-width:none;
@@ -47,18 +61,6 @@ table
     border-top:1px solid #dddddd;
 }
 
-.table th
-{
-    width:auto;
-    height:auto;
-    font-weight:bold;
-}
-
-.table thead th
-{
-    vertical-align:bottom;
-}
- 
 
 
 .deletedrecipe {
@@ -76,5 +78,14 @@ table
     width: 300px;
     height: 100px;
     border: 1px#
+
+}
+
+p{
+
+    background-color:#F08080;
+    color:#FFFF99;
+    text-align:left;
+
 
 }

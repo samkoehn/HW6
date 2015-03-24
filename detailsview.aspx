@@ -18,10 +18,10 @@
 
     </h2>
     <nav>
-        <a href="Default.aspx">Home</a>
-        <a href="NewRecipe.aspx">New Recipe</a>
-        <a href="AboutUs.html">About Us</a>
-        <a href="ContactUs.aspx">Contact Us</a> 
+        <a class="nav" href="Default.aspx">Home</a>
+        <a class="nav" href="NewRecipe.aspx">New Recipe</a>
+        <a class="nav" href="AboutUs.aspx">About Us</a>
+        <a class="nav" href="ContactUs.aspx">Contact Us</a> 
     </nav>
     <form id="form1" runat="server">
     <div>
